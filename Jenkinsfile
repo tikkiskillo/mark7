@@ -16,7 +16,19 @@ pipeline {
     }
     stage('Run Features') {
       steps {
-        sh "bundle exec cucumber -p ci"
+        script {
+          try {
+            sh "bundle exec cucumber -p ci"
+          } finally {
+            cucumber fileIncludePattern: '**/*.json', sortingMethod: 'ALPHABETICAL'
+          }        
+        }
+      }
+    }
+    stage('Read to Production') {
+      steps {
+        input message: 'Testes finalizados com sucesso. Podemos ir pra produção?'
+        echo "Subindo pra produção"
       }
     }
   }
