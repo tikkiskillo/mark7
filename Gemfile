@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'capybara'
-gem 'cucumber'
 gem 'chromedriver-helper'
+gem 'cucumber'
 gem 'faker'
+gem 'mongo', '2.6.1'
 gem 'rspec'
 gem 'selenium-webdriver'
-gem 'mongo', '2.6.1'

@@ -10,7 +10,7 @@ if @browser.eql?('headless')
 
   args = ['--no-default-browser-check']
 
-  caps = Selenium::Webdriver::Remote::Capabilities.chrome(
+  caps = Selenium::WebDriver::Remote::Capabilities.chrome(
     'chromeOptions' => {
       'args' => args
     }
